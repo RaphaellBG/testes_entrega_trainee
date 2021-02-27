@@ -1,8 +1,9 @@
 - Passar um script do python pro trainees pra eles poderem testar
 - Criarão um script que publicará e receberá mensagens mqtt
-- Eles terão que receber uma telemetria e realizar operações:
-	- ADCS: receberão angulos de euler e transformarão em quternions
+- Eles terão que receber uma telemetria num tópico e interpretar
+	- ADCS: receberão angulos de euler ...
 	- EPS: receberão leituras de tensão e transformarão em SOC (?)
 	- TCS: receberão leituras de temperatura e...
+- Eles terão que mandar os telecomandos para um tópico de telecomando
 - Pacote deles terá de conter identificação de equipe 
 - Documentação explicando o que fizeram
