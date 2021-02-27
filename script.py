@@ -4,6 +4,7 @@ import paho.mqtt.client as paho
 if __name__ == "__main__":
     client = paho.Client()
 if client.connect("test.mosquitto.org", 1883, 60) == 0 :
+    print("Conectado")
     dados = {
         "identificador": 1,
         "modo": 1,
