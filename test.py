@@ -30,5 +30,6 @@ for i in range (10):
             {"tcs": temp_int}
         ],
     }
-    client.publish("czarspace_telemetria", js.dumps(dados))
+    client.publish("czarspace_telemetria", js.dumps(dados), retain=True)
     time.sleep(5)
+print("finalizado")
