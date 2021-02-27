@@ -1,18 +1,34 @@
-#import json as js
-#import time
+import json as js
+import sys
+import time
+import random
+import paho.mqtt.client as paho
 
-print("teste")
 
-#dados = {
-#    "flag1": "00",
-#    "hora": ts = time.time(),
-#    "subsistema": "ADCS",
-#    "modo": 1,
-#    "telemetrias": [
-#        {"adcs": [23.4, 33.9, 80.0]}
-#        {"eps": [3.3 89]}
-#    ],
-#    "flag2": "00"
-#}
+client = paho.Client()
+if client.connect("test.mosquitto.org", 1883, 60) != 0 :
+    print("Falha na conexão com broker")
+    sys.exit(-1)
+print("conectado")
 
-#print(js.dumps(dados))
+for i in range (10):
+    vbat = round(random.uniform(2, 3.9),1) #Volts
+    modo = random.randint(1,3)
+    soc = random.randint(85,100) #%
+    temp_int = round(random.uniform(-10, 25),2) #°C
+    euler1 = round(random.uniform(-180,180),1) #°
+    euler2 = round(random.uniform(-180,180),1) #° 
+    euler3 = round(random.uniform(-180,180),1) #°
+
+    dados = {
+        "identificador": i,
+        "hora": time.time(),
+        "modo": modo,
+        "telemetrias": [
+            {"adcs": [euler1, euler2, euler3]},
+            {"eps": [vbat, soc]},
+            {"tcs": temp_int}
+        ],
+    }
+    client.publish("czarspace_telemetria", js.dumps(dados))
+    time.sleep(5)
