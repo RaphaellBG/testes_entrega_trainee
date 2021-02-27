@@ -16,9 +16,9 @@ for i in range (10):
     modo = random.randint(1,3)
     soc = random.randint(85,100) #%
     temp_int = round(random.uniform(-10, 25),2) #°C
-    euler1 = round(random.uniform(-180,180),1) #°
-    euler2 = round(random.uniform(-180,180),1) #° 
-    euler3 = round(random.uniform(-180,180),1) #°
+    euler1 = round(random.uniform(-190,190),1) #°
+    euler2 = round(random.uniform(-190,190),1) #° 
+    euler3 = round(random.uniform(-190,190),1) #°
 
     dados = {
         "identificador": i,
