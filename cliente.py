@@ -11,6 +11,7 @@ def on_message(client, userdata, msg):
     print(msg.topic+" "+str(msg.payload))
 
 client = paho.Client()
+
 client.on_connect = on_connect
 client.on_message = on_message
 
