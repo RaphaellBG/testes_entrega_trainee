@@ -12,6 +12,9 @@ ts = time.time() #timestamp em epoch
 print(datetime.datetime.fromtimestamp(ts)) #timestamp formatada - só para visualizar
 hora = str(ts)
 
+
+
+
 #switch case iria aqui para gerar telemetrias aleatórias com base na hora da mensagem 
 subsistema = "ADCS"
 atitude = [23,65,89]
