@@ -1,3 +1,7 @@
+#código exemplo de publish em um tópico mqtt hospedado em 'test.mosquitto.org'
+#na avaliação da entrega, o valores associados a cada dado serão alterados com intenção 
+#de validar a interpretação realizada por cada equipe da telemetria
+
 import json 
 import paho.mqtt.client as paho
 import time
