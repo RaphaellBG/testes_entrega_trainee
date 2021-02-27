@@ -1,20 +1,23 @@
 import json 
 import paho.mqtt.client as paho
-
+import time
 if __name__ == "__main__":
     client = paho.Client()
-if client.connect("test.mosquitto.org", 1883, 60) == 0 :
-    print("Conectado")
-    dados = {
-        "identificador": 1,
-        "modo": 1,
-        "telemetrias": [
-            {"adcs": [0, 0, 180]},
-            {"eps": [1]},
-            {"tcs": 30}
-        ],
-    }
-    client.publish("topico_envio_czar", payload = json.dumps(dados), qos = 1)
+    if client.connect("test.mosquitto.org", 1883, 60) == 0 :
+        print("Conectado")
+        dados = {
+            "identificador": 1,
+            "adcs_on": True,
+            "telemetrias": [
+                {"IMU": [0, 0, 180]},
+                {"Vbat": [1]},
+                {"Temp1": 30},
+                {"Hall" : -60}
+            ],
+            "tempo" : time.time(),
+            "Mem_livre" : 0xFF0F10
+        }
+    client.publish("czar_telemetria", payload = json.dumps(dados), qos = 1)
 else:
     print("Falha na conexão com broker")
     sys.exit(-1)

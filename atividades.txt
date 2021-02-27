@@ -7,3 +7,7 @@
 - Eles terão que mandar os telecomandos para um tópico de telecomando
 - Pacote deles terá de conter identificação de equipe 
 - Documentação explicando o que fizeram
+
+- Requisitos:
+	- 
+
