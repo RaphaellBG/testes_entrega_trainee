@@ -10,8 +10,8 @@ if __name__ == "__main__":
             "adcs_on": True,
             "telemetrias": [
                 {"IMU": [0, 0, 180]},
-                {"Vbat": [1]},
-                {"Temp1": 30},
+                {"Vbat": 2.1},
+                {"Temp1": 30.3},
                 {"Hall" : -60}
             ],
             "tempo" : time.time(),
