@@ -17,7 +17,7 @@ if __name__ == "__main__":
             "tempo" : time.time(),
             "Mem_livre" : 0xFF0F10
         }
-    client.publish("czar_telemetria", payload = json.dumps(dados), qos = 1)
+    client.publish("czar_telemetria", payload = json.dumps(dados), qos = 1, retain=True)
 else:
     print("Falha na conexão com broker")
     sys.exit(-1)
