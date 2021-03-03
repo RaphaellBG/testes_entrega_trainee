@@ -12,7 +12,7 @@ if __name__ == "__main__":
     if client.connect("test.mosquitto.org", 1883, 60) == 0 :
         print("Conectado")
         dados = {
-            "id": 1, #identificador
+            "id": A, #identificador da telemetria
             "telemetrias": {
                 "IMU": [0, 0, 180], #leituras da IMU (ângulos de Euler), em graus
                 "SOC": 30, #estado da carga, em porcentagem
