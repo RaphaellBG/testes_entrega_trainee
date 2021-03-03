@@ -10,14 +10,13 @@ if __name__ == "__main__":
     if client.connect("test.mosquitto.org", 1883, 60) == 0 :
         print("Conectado")
         dados = {
-            "identificador": 1,
-            "adcs_on": True,
-            "telemetrias": [
-                {"IMU": [0, 0, 180]},
-                {"Vbat": 2.1},
-                {"Temp1": 30.3},
-                {"Hall" : -60}
-            ],
+            "id": 1,
+            "telemetrias": {
+                "IMU": [0, 0, 180],
+                "SOC": 30,
+                "Temp1": 30.3,
+                "Hall" : -60
+              },
             "tempo" : time.time(),
             "Mem_livre" : 0xFF0F10
         }
