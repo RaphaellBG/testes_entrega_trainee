@@ -3,6 +3,7 @@ import json
 import time
 
 class aEnviar:
+    point = [0, 45, 0]
     def __init__(self, dados):
         self.data = dados
         self.telecom = self.create_telecom() 
@@ -20,7 +21,12 @@ class aEnviar:
         else:
             status = True
         return status
-            
+    def is_attitude_okay(self):   
+        eps = 3
+        status = False if (abs(self.data["telemetrias"]["IMU"][i] - point[i]) > eps for i in range(0, 2))
+        return status
+
+
     def create_telecom(self):
         mensagem = dict()
         mensagem["id"] = self.data["id"]
