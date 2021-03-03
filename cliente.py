@@ -22,8 +22,8 @@ class aEnviar:
             status = True
         return status
     def is_attitude_okay(self):   
-        eps = 3
-        status = False if (abs(self.data["telemetrias"]["IMU"][i] - point[i]) > eps for i in range(0, 2))
+        epsilon = 3
+        status = all(abs(self.data["telemetrias"]["IMU"][i] - self.point[i]) < epsilon for i in range(0, 3))
         return status
 
 
