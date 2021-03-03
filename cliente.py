@@ -40,7 +40,11 @@ class aEnviar:
             mensagem["telecomandos"]["adcs_pw"] = False 
             mensagem["telecomandos"]["tcs_pw"] = True
             mensagem["telecomandos"]["payload_pw"] = False
-        elif self.is_battery_okay() and self.is_temperature_okay():
+        elif self.is_battery_okay() and self.is_temperature_okay() and not self.is_attitude_okay():
+            mensagem["telecomandos"]["adcs_pw"] = True
+            mensagem["telecomandos"]["tcs_pw"] = True
+            mensagem["telecomandos"]["payload_pw"] = False
+        elif self.is_battery_okay() and self.is_temperature_okay() and  self.is_attitude_okay():
             mensagem["telecomandos"]["adcs_pw"] = True
             mensagem["telecomandos"]["tcs_pw"] = True
             mensagem["telecomandos"]["payload_pw"] = True
