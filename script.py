@@ -5,6 +5,8 @@
 import json 
 import paho.mqtt.client as paho
 import time
+import sys
+
 if __name__ == "__main__":
     client = paho.Client()
     if client.connect("test.mosquitto.org", 1883, 60) == 0 :
